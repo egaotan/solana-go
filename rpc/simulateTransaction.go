@@ -25,6 +25,11 @@ import (
 )
 
 type SimulateTransactionResponse struct {
+	Context Context `json:"context"`
+	Value SimulateTransactionResponse1 `json:"value"`
+}
+
+type SimulateTransactionResponse1 struct {
 	// Error if transaction failed, null if transaction succeeded.
 	Err interface{} `json:"err,omitempty"`
 
