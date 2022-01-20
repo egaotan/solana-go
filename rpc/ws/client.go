@@ -52,6 +52,10 @@ const (
 	pingPeriod = (pongWait * 9) / 10
 )
 
+func (c *Client) Remote() string {
+	return c.conn.RemoteAddr().String()
+}
+
 // Connect creates a new websocket client connecting to the provided endpoint.
 func Connect(ctx context.Context, rpcEndpoint string) (c *Client, err error) {
 	c = &Client{
